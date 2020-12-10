@@ -2,6 +2,7 @@ package br.com.jc.estruturadados.main;
 
 import java.util.Scanner;
 
+import br.com.jc.estruturadados.filas.Fila;
 import br.com.jc.estruturadados.listasligadas.ListaDuplamenteLigada;
 import br.com.jc.estruturadados.listasligadas.ListaLigada;
 import br.com.jc.estruturadados.modelos.Pessoa;
@@ -20,6 +21,7 @@ public class Main {
 		System.out.println("3. Lista ligada");
 		System.out.println("4. Lista duplamente ligada");
 		System.out.println("5. Pilha");
+		System.out.println("6. Fila");
 
 		int opcao = sc.nextInt();
 
@@ -39,9 +41,23 @@ public class Main {
 		case 5:
 			fazerPilha();
 			break;
+		case 6:
+			fazerFila();
+			break;
 		}
 
 		sc.close();
+	}
+
+	private static void fazerFila() {
+		Fila<Pessoa> filaPessoas = new Fila<Pessoa>();
+		System.out.println(filaPessoas.estaVazia());
+		filaPessoas.enfileirar(new Pessoa(1, "Jean 1"));
+		filaPessoas.enfileirar(new Pessoa(2, "Jean Leonel 2"));
+		System.out.println(filaPessoas.toString());
+		Pessoa p1 = filaPessoas.desenfileirar();
+		System.out.println(p1.toString());
+		System.out.println(filaPessoas.toString());
 	}
 
 	private static void fazerPilha() {
