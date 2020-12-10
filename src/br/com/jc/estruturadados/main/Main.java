@@ -2,6 +2,7 @@ package br.com.jc.estruturadados.main;
 
 import java.util.Scanner;
 
+import br.com.jc.estruturadados.conjuntos.Conjunto;
 import br.com.jc.estruturadados.filas.Fila;
 import br.com.jc.estruturadados.listasligadas.ListaDuplamenteLigada;
 import br.com.jc.estruturadados.listasligadas.ListaLigada;
@@ -22,6 +23,7 @@ public class Main {
 		System.out.println("4. Lista duplamente ligada");
 		System.out.println("5. Pilha");
 		System.out.println("6. Fila");
+		System.out.println("7. Conjunto");
 
 		int opcao = sc.nextInt();
 
@@ -44,9 +46,25 @@ public class Main {
 		case 6:
 			fazerFila();
 			break;
+		case 7:
+			fazerConjunto();
+			break;
 		}
 
 		sc.close();
+	}
+
+	private static void fazerConjunto() {
+		Conjunto<Pessoa> conjuntoPessoas = new Conjunto<Pessoa>();
+		System.out.println(conjuntoPessoas);
+		System.out.println(conjuntoPessoas.estaVazio());
+		System.out.println(conjuntoPessoas.inserir(new Pessoa(1, "Jean 1")));
+		System.out.println(conjuntoPessoas.toString());
+		System.out.println(conjuntoPessoas.inserir(new Pessoa(1, "Jean 1")));
+		System.out.println(conjuntoPessoas.inserir(new Pessoa(2, "Jean 1")));
+		System.out.println(conjuntoPessoas.toString());
+		System.out.println(conjuntoPessoas.inserirEm(1, new Pessoa(1, "Jean 1")));
+		System.out.println(conjuntoPessoas.toString());
 	}
 
 	private static void fazerFila() {
