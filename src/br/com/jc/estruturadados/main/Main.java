@@ -5,6 +5,7 @@ import java.util.Scanner;
 import br.com.jc.estruturadados.listasligadas.ListaDuplamenteLigada;
 import br.com.jc.estruturadados.listasligadas.ListaLigada;
 import br.com.jc.estruturadados.modelos.Pessoa;
+import br.com.jc.estruturadados.pilhas.Pilha;
 import br.com.jc.estruturadados.vetores.Vetor;
 
 public class Main {
@@ -18,6 +19,7 @@ public class Main {
 		System.out.println("2. Vetores");
 		System.out.println("3. Lista ligada");
 		System.out.println("4. Lista duplamente ligada");
+		System.out.println("5. Pilha");
 
 		int opcao = sc.nextInt();
 
@@ -34,9 +36,22 @@ public class Main {
 		case 4:
 			fazerListaDuplamenteLigada();
 			break;
+		case 5:
+			fazerPilha();
+			break;
 		}
 
 		sc.close();
+	}
+
+	private static void fazerPilha() {
+		Pilha<Pessoa> pilhaPessoas = new Pilha<Pessoa>();
+		System.out.println(pilhaPessoas.estaVazia());
+		pilhaPessoas.empilhar(new Pessoa(1, "Jean 1"));
+		pilhaPessoas.empilhar(new Pessoa(2, "Jean Leonel 2"));
+		pilhaPessoas.empilhar(new Pessoa(3, "Jean Carlos 3"));
+		Pessoa p1 = pilhaPessoas.desempilhar();
+		System.out.println(p1.toString());
 	}
 
 	private static void fazerListaDuplamenteLigada() {
