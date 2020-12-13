@@ -56,14 +56,13 @@ public class Main {
 
 	private static void fazerConjunto() {
 		Conjunto<Pessoa> conjuntoPessoas = new Conjunto<Pessoa>();
-		System.out.println(conjuntoPessoas);
 		System.out.println(conjuntoPessoas.estaVazio());
 		System.out.println(conjuntoPessoas.inserir(new Pessoa(1, "Jean 1")));
 		System.out.println(conjuntoPessoas.toString());
 		System.out.println(conjuntoPessoas.inserir(new Pessoa(1, "Jean 1")));
 		System.out.println(conjuntoPessoas.inserir(new Pessoa(2, "Jean 1")));
 		System.out.println(conjuntoPessoas.toString());
-		System.out.println(conjuntoPessoas.inserirEm(1, new Pessoa(1, "Jean 1")));
+		System.out.println(conjuntoPessoas.inserir(new Pessoa(1, "Jean 1")));
 		System.out.println(conjuntoPessoas.toString());
 	}
 
